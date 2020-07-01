@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:openapi_generator_annotations/openapi_generator_annotations.dart';
 
 void main() {
   runApp(MyApp());
 }
 
+@Openapi(
+    additionalProperties:
+        AdditionalProperties(pubName: 'petstore_api', pubAuthor: 'Johnny dep'),
+    inputSpecFile: 'example/openapi-spec.yaml',
+    generatorName: 'dart-jaguar',
+    outputDirectory: 'api/petstore_api')
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
